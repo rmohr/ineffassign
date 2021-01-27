@@ -1,7 +1,6 @@
-package main
+package ineffassign
 
 import (
-	"flag"
 	"fmt"
 	"go/ast"
 	"go/token"
@@ -9,16 +8,7 @@ import (
 	"strings"
 
 	"golang.org/x/tools/go/analysis"
-	"golang.org/x/tools/go/analysis/singlechecker"
 )
-
-func main() {
-	singlechecker.Main(Analyzer)
-}
-
-func init() {
-	flag.Bool("n", false, "don't recursively check paths (deprecated)")
-}
 
 // Analyzer is the ineffassign analysis.Analyzer instance.
 var Analyzer = &analysis.Analyzer{
